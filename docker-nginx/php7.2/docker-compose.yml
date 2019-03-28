@@ -1,0 +1,45 @@
+  ########################
+ ##   Lumen Skeleton   ##
+########################
+
+version: "3.3"
+services:
+  lumen57-nginx-php72:
+    build:
+      context: ./config/php-fpm/
+    container_name: lumen57-nginx-php72
+    image: godoysp/lumen57-nginx-php72:latest
+    volumes:
+      - type: bind
+        source: ../../
+        target: /var/www/lumen57/
+      - type: bind
+        source: ./config/php-fpm/php-ini-overrides.ini
+        target: /usr/local/etc/php/conf.d/99-overrides.ini
+    networks:
+      - lumen57
+  lumen57-nginx:
+    build:
+      context: ./config/nginx/
+    depends_on:
+      - lumen57-nginx-php72
+    container_name: lumen57-nginx
+    image: godoysp/lumen57-nginx:latest
+    links:
+      - lumen57-nginx-php72
+    volumes:
+      - type: bind
+        source: ../../
+        target: /var/www/lumen57/
+      - type: bind
+        source: ./config/nginx/sites-enabled/lumen57.conf
+        target: /etc/nginx/conf.d/lumen57.conf
+    networks:
+      - lumen57
+    ports:
+      - "80:80"
+    environment:
+      - SRV_DNS_LUMEN57='lumen57.local'
+networks:
+  lumen57:
+    external: true

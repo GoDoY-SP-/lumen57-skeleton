@@ -1,0 +1,45 @@
+  ########################
+ ##   Banco de Dados   ##
+########################
+
+version: "3.3"
+secrets:
+  dbroot:
+    file: ./config/secrets/mysql-root
+services:
+  lumen57-mariadb102:
+    build:
+      context: ./config/
+    container_name: lumen57-mariadb102
+    image: godoysp/lumen57-mariadb102:latest
+    networks:
+      - lumen57
+    ports:
+      - "3306:3306"
+    secrets:
+      - dbroot
+    volumes:
+      - type: bind
+        source: ./data
+        target: /var/lib/mysql
+  lumen57-phpmyadmin-mariadb:
+    build:
+      context: ../php-my-admin/config/
+    container_name: lumen57-phpmyadmin-mariadb
+    depends_on:
+      - lumen57-mariadb102
+    image: godoysp/lumen57-phpmyadmin-mariadb:latest
+    networks:
+      - lumen57
+    ports:
+      - 8080:80
+    volumes:
+      - /sessions
+    links:
+      - lumen57-mariadb102
+    environment:
+      - PMA_HOST=lumen57-mariadb102
+      - PMA_PORT=3306
+networks:
+  lumen57:
+    external: true
