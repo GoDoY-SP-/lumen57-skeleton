@@ -8,7 +8,7 @@ use App\Contracts\DefaultRepositoryContract;
  * Class DefaultRepositoryAbstract
  * Repositório Abstrato Padrão
  * @package App\Repositories
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 abstract class DefaultRepositoryAbstract implements DefaultRepositoryContract
 {

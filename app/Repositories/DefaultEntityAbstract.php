@@ -8,7 +8,7 @@ use Zend\Hydrator\ClassMethodsHydrator;
  * Class DefaultEntityAbstract
  * Entidade Abstrata Padrão
  * @package App\Repositories
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 abstract class DefaultEntityAbstract
 {

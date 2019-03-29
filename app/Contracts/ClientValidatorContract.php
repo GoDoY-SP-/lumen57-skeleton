@@ -6,7 +6,7 @@ namespace App\Contracts;
  * Interface ClientValidatorContract
  * Contrato para Validação de Cliente
  * @package App\Contracts
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 interface ClientValidatorContract
 {

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
  * Class ClientValidator
  * Validador de Cliente
  * @package App\Filters
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientValidator implements ClientValidatorContract
 {

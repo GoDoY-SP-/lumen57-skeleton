@@ -6,7 +6,7 @@ namespace App\Contracts;
  * Interface ClientServiceContract
  * Contrato para Serviço de Cliente
  * @package App\Contracts
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 interface ClientServiceContract
 {

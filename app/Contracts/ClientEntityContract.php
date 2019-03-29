@@ -6,7 +6,7 @@ namespace App\Contracts;
  * Interface ClientEntityContract
  * Contrato Padrão para Entidade de Cliente
  * @package App\Contracts
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 interface ClientEntityContract extends DefaultEntityContract
 {

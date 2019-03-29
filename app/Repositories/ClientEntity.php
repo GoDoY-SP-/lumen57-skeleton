@@ -9,7 +9,7 @@ use App\Contracts\ClientEntityContract;
  * Class ClientEntity
  * Entidade de Clientes
  * @package App\Repositories
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientEntity extends DefaultEntityAbstract implements ClientEntityContract
 {

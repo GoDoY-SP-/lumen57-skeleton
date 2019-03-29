@@ -6,7 +6,7 @@ namespace App\Contracts;
  * Interface DefaultRepositoryContract
  * Contrato Padrão para Repositório
  * @package App\Contracts
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 interface DefaultRepositoryContract
 {

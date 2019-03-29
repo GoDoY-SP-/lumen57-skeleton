@@ -11,7 +11,7 @@ use App\Contracts\ClientServiceContract;
  * Class ClientService
  * Serviço de Cliente (Domain)
  * @package App\Http\Services
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientService implements ClientServiceContract
 {

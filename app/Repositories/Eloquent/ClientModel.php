@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class ClientModel
  * Model de Client usando Eloquent
  * @package App\Repositories\Eloquent
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientModel extends Model
 {

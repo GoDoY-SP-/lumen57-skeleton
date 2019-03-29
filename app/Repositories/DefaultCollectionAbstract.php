@@ -9,7 +9,7 @@ use App\Contracts\DefaultCollectionContract;
  * Class DefaultCollectionAbstract
  * Coleção Abstrata Padrão
  * @package App\Repositories
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 abstract class DefaultCollectionAbstract implements DefaultCollectionContract
 {

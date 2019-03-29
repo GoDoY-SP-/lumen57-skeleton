@@ -11,7 +11,7 @@ use Zend\Hydrator\ClassMethodsHydrator;
  * Class ClientRepositoryAdapter
  * Adaptador de Repositório usando Eloquent
  * @package App\Repositories\Eloquent
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientRepositoryAdapter implements ClientRepositoryContract
 {

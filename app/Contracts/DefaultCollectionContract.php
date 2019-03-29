@@ -6,7 +6,7 @@ namespace App\Contracts;
  * Interface DefaultCollectionContract
  * Contrato Padrão para Coleção
  * @package App\Contracts
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 interface DefaultCollectionContract extends \Iterator
 {

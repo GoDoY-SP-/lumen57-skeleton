@@ -8,7 +8,7 @@ use App\Contracts\ClientFilterContract;
  * Class ClientFilter
  * Filtro de Cliente
  * @package App\Filters
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientFilter implements ClientFilterContract
 {

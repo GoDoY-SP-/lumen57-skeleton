@@ -10,7 +10,7 @@ use App\Contracts\ClientValidatorContract;
  * Class ClientController
  * Controlador de Rotas de Clientes
  * @package App\Http\Controllers
- * @autor Danilo D. de Godoy <danilo.doring@gmail.com>
+ * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientController extends Controller
 {
