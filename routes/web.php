@@ -14,3 +14,14 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// Clientes
+$router->get('/clients', [
+    'as' => 'clients.get',
+    'uses' => 'ClientController@list'
+]);
+
+$router->get('/client/{id}', [
+    'as' => 'client.id.get',
+    'uses' => 'ClientController@getById'
+]);
