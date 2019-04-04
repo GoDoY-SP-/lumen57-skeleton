@@ -45,7 +45,7 @@ class ClientValidator implements ClientValidatorContract
                 'name' => $name,
             ],
             [
-                'name' => 'required|alpha',
+                'name' => 'required|regex:/[A-Za-z ]/i',
             ]
         );
 
