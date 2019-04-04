@@ -3,3 +3,8 @@
 Homestead.json
 Homestead.yaml
 .env
+
+# Configurações de desenvolvimento
+clover.xml
+code-coverage/
+coveralls-upload.json
