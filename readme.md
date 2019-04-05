@@ -8,7 +8,7 @@ Clique no link para acessar a documentação do [Laravel Lumen](https://lumen.la
 
 ## Artefatos propostos
 
-Seguem os artefatos propostos e suas responsabilidades:
+Seguem os artefatos recomendados e suas responsabilidades:
 
 - Estrutura de pastas
 ```
@@ -64,7 +64,7 @@ Pensando em forma de camadas, o fluxo simples de dados seria algo como:
 <<] Response <-| Controller <-| Service <-| Repository  /
 ```
 
-####IMPORTANTE
+#### IMPORTANTE
 É fortemente indicado o uso de injeção de dependência. No caso do Laravel Lumen é recomendado usar o [Service Provider](https://laravel.com/docs/5.7/providers). 
 
 ## License
