@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Teste Unitário da Classe ClientService
  * Class ClientServiceTest
- * @package AppTest\Filters
+ * @package AppTest\Http\Service
  * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientServiceTest extends TestCase
