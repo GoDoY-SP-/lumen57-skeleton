@@ -1,20 +1,71 @@
-# Lumen PHP Framework
+# Arquitetura usando Laravel Lumen Framework PHP
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+Sugestão de arquitetura para uso do micro framework Laravel Lumen.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Laravel Lumen - Documentação
 
-## Official Documentation
+Clique no link para acessar a documentação do [Laravel Lumen](https://lumen.laravel.com/docs).
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## Artefatos propostos
 
-## Security Vulnerabilities
+Seguem os artefatos propostos e suas responsabilidades:
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+- Estrutura de pastas
+```
+.
+├── app
+│   ├── Console
+│   │   └── Commands
+│   ├── Contracts ***
+│   ├── Events
+│   ├── Exceptions
+│   ├── Filters ***
+│   ├── Http
+│   │   ├── Controllers
+│   │   ├── Middleware
+│   │   └── Services ***
+│   ├── Jobs
+│   ├── Listeners
+│   ├── Providers
+│   └── Repositories ***
+├── bootstrap
+├── database
+│   ├── factories
+│   ├── migrations
+│   └── seeds
+├── public
+├── resources
+│   └── views
+├── routes
+├── storage
+│   ├── app
+│   ├── framework
+│   │   ├── cache
+│   │   └── views
+│   └── logs
+└── tests
+```
+*** Diretórios não existentes na estrutura padrão, criados para separar as responsabilidades destes artefatos. Parto do princípio que os artefatos padrões do Laravel Lumen já são conhecidos, onde abaixo estarei explicando somente os novos artefatos.
+
+- Contracts: Neste diretório ficam todas as Interfaces da aplicação. O ideal é que injeção de dependência no service container aconteça usando essas interfaces/contratos pois caso seja implementada outra classe/serviço para fazer o proposto pela interface/contrato, obrigatoriamente deverão ser implementados os métodos já definidos não necessitando alterar toda a aplicação que usa aquela classe/serviço.
+[Clique aqui para mais informações](https://laravel.com/docs/5.7/contracts).
+
+- Filters: Neste diretório ficam os filtros e validadores. Filtros são usados para filtrar dados baseados em formatações como trim, inteiro, alphanumérico, etc. Validadores são usado para validar o tipo do dado. É possível criar suas próprias formatações e validações como CPF, CNPJ, etc. Aconselhável uso do módulo [Zend Filter](https://docs.zendframework.com/zend-filter/) do Zend Framework e [Validator](https://laravel.com/docs/5.7/validation) do Laravel. Este artefato geralmente é usado na camada de controller, filtrando e validando a requisição antes de seguir para as próximas camadas.
+
+- Services: Neste diretório ficam os serviços de domínio responsáveis por processar regras de negócio da aplicação.
+
+- Repositories: Neste diretório ficam os repositórios para persistência de dados. Geralmente eles são de persistência em banco de dados porém podem persistir em outros locais como arquivos locais e/ou externos como nuvem, outras aplicações, etc. No caso do Eloquent ele funciona como uma camada de abstração do model. Para hydratação e mapeamento, aconselhável o uso do módulo [Zend Hydrator](https://docs.zendframework.com/zend-hydrator/) do Zend Framework. Neste diretório também ficam as entidades e coleções do domínio. É aconselhável o uso de adaptadores para diminuir o acoplamento entre as dependências.
+
+---
+Pensando em forma de camadas, o fluxo simples de dados seria algo como:
+
+```
+[>>  Request |-> Controller |-> Service |-> Repository  \
+<<] Response <-| Controller <-| Service <-| Repository  /
+```
+
+####IMPORTANTE
+É fortemente indicado o uso de injeção de dependência. No caso do Laravel Lumen é recomendado usar o [Service Provider](https://laravel.com/docs/5.7/providers). 
 
 ## License
 
