@@ -28,7 +28,7 @@ class ClientControllerTest extends TestCase
      * Configuração inicial
      * Executada antes dos testes.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         /** @var ClientCollectionContract $clientCollection */
         $clientCollection = (new ClientCollection())

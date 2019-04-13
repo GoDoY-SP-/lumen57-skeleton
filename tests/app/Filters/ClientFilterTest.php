@@ -20,7 +20,7 @@ class ClientFilterTest extends TestCase
      * Configuração inicial
      * Executada antes dos testes.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // Instanciar ClientFilter
         $this->clientFilter = new ClientFilter();

@@ -21,7 +21,7 @@ class ClientServiceTest extends TestCase
      * Configuração inicial
      * Executada antes dos testes.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // Sem configuração
     }

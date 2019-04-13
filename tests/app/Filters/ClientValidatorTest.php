@@ -21,7 +21,7 @@ class ClientValidatorTest extends TestCase
      * Configuração inicial
      * Executada antes dos testes.
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         // Instanciar ClientValidator
         $this->clientValidator = new ClientValidator();
