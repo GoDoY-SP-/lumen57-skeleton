@@ -8,3 +8,4 @@ Homestead.yaml
 clover.xml
 code-coverage/
 coveralls-upload.json
+.phpunit.result.cache
