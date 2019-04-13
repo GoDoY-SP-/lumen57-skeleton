@@ -52,12 +52,14 @@ class ClientCollectionTest extends TestCase
         $this->assertInstanceOf(ClientEntity::class, $colletion->current());
         $colletion->next();
         $this->assertTrue(($colletion->current()->getId() == 2));
+        $colletion->remove($entity);
+        $this->assertTrue(($colletion->count() == 1));
 
         // testar conversão para array
         $colletionArray = $colletion->toArray();
         $this->assertIsArray($colletionArray);
-        $this->assertArrayHasKey('id', $colletionArray[1]);
-        $this->assertArrayHasKey('name', $colletionArray[1]);
-        $this->assertArrayHasKey('email', $colletionArray[1]);
+        $this->assertArrayHasKey('id', $colletionArray[0]);
+        $this->assertArrayHasKey('name', $colletionArray[0]);
+        $this->assertArrayHasKey('email', $colletionArray[0]);
     }
 }
