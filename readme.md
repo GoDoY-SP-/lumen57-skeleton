@@ -65,7 +65,9 @@ Pensando em forma de camadas, o fluxo simples de dados seria algo como:
 ```
 
 #### IMPORTANTE
-É fortemente indicado o uso de injeção de dependência. No caso do Laravel Lumen é recomendado usar o [Service Provider](https://laravel.com/docs/5.7/providers). 
+É fortemente indicado o uso de injeção de dependência. No caso do Laravel Lumen é recomendado usar o [Service Provider](https://laravel.com/docs/5.7/providers).
+
+Para usar a cobertura de código(code coverage) com PHPUnit é necessário instalar o [xDebug](https://xdebug.org/). 
 
 ## License
 
