@@ -5,6 +5,8 @@ namespace App\Repositories\Eloquent;
 use App\Contracts\ClientCollectionContract;
 use App\Contracts\ClientEntityContract;
 use App\Contracts\ClientRepositoryContract;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Zend\Hydrator\ClassMethodsHydrator;
 
 /**
@@ -48,7 +50,7 @@ class ClientRepositoryAdapter implements ClientRepositoryContract
     public function findAll()
     {
         // Chamada do eloquent
-        /** @var ClientModel[]|\Illuminate\Database\Eloquent\Collection $eloquentCollection */
+        /** @var ClientModel[]|Collection $eloquentCollection */
         $eloquentCollection = $this->model->all();
 
         if (!$eloquentCollection) {
@@ -62,7 +64,7 @@ class ClientRepositoryAdapter implements ClientRepositoryContract
         $clientCollection = clone $this->clientCollection;
 
         foreach ($eloquentCollection as $eloquentModel) {
-            /** @var \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static[]|static|null $eloquentModel */
+            /** @var Model|Collection|static[]|static|null $eloquentModel */
             /** @var ClientEntityContract | null $clientEntity */
             $clientEntity = (new ClassMethodsHydrator(false))->hydrate(
                 $eloquentModel->toArray(),
@@ -82,7 +84,7 @@ class ClientRepositoryAdapter implements ClientRepositoryContract
      */
     public function findById(int $id)
     {
-        /** @var \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static[]|static|null $eloquentModel */
+        /** @var Model|Collection|static[]|static|null $eloquentModel */
         $eloquentModel = $this->model->newQuery()->find($id);
 
         if (!$eloquentModel) {
