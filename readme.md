@@ -22,12 +22,12 @@ Seguem os artefatos recomendados e suas responsabilidades:
 │   ├── Filters ***
 │   ├── Http
 │   │   ├── Controllers
-│   │   ├── Middleware
-│   │   └── Services ***
+│   │   └── Middleware
 │   ├── Jobs
 │   ├── Listeners
 │   ├── Providers
-│   └── Repositories ***
+│   ├── Repositories ***
+│   └── Services ***
 ├── bootstrap
 ├── database
 │   ├── factories
