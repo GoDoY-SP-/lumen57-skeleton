@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use App\Contracts\ClientCollectionContract;
 use App\Contracts\ClientEntityContract;
@@ -10,7 +10,7 @@ use App\Contracts\ClientServiceContract;
 /**
  * Class ClientService
  * Serviço de Cliente (Domain)
- * @package App\Http\Services
+ * @package App\Services
  * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientService implements ClientServiceContract

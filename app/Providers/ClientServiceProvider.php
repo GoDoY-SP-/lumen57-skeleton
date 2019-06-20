@@ -11,7 +11,7 @@ use App\Contracts\ClientServiceContract;
 use App\Contracts\ClientValidatorContract;
 use App\Filters\ClientFilter;
 use App\Filters\ClientValidator;
-use App\Http\Services\ClientService;
+use App\Services\ClientService;
 use App\Repositories\ClientCollection;
 use App\Repositories\ClientEntity;
 use App\Repositories\ClientRepository;

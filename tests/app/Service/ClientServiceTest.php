@@ -1,10 +1,10 @@
 <?php
 
-namespace AppTest\Http\Service;
+namespace AppTest\Service;
 
 use App\Contracts\ClientRepositoryContract;
 use App\Contracts\ClientServiceContract;
-use App\Http\Services\ClientService;
+use App\Services\ClientService;
 use App\Repositories\ClientCollection;
 use App\Repositories\ClientEntity;
 use PHPUnit\Framework\TestCase;
@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Teste Unitário da Classe ClientService
  * Class ClientServiceTest
- * @package AppTest\Http\Service
+ * @package AppTest\Service
  * @author Danilo D. de Godoy <danilo.doring@gmail.com>
  */
 class ClientServiceTest extends TestCase
